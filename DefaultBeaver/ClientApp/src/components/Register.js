@@ -5,14 +5,14 @@ import classnames from 'classnames';
 import axios from 'axios';
 //import { connect } from 'react-redux';
 
-//import EmailConfirm from './EmailConfirm';
+import EmailConfirm from './EmailConfirm';
 
 class Register extends Component {
     state = {
         login:'',
         password:'',
         passConfirm:'',
-        showCab:false
+        showCnf:false
     }
 
     onChange=(e)=>{
@@ -24,19 +24,18 @@ class Register extends Component {
         console.log('---submitReg---');
         const {login, password,passConfirm}=this.state;
         const model={"email":login,"password":password,"passwordConfirm":passConfirm};
-        axios.post("http://localhost:56269/api/account/register",model).then(
+        axios.post("http://localhost:60774/api/account/register",model).then(
             (rest)=>{
                 console.log("--register--");
-                this.setState({showCab:true});
+                this.setState({showCnf:true});
                 console.log("--showRegister--");
             }
         );
-        this.setState({showCab:false});
-
+        this.setState({showCnf:false});
     }
 
     render() {
-        const{login,password,passConfirm,showCab}=this.state;
+        const{login,password,passConfirm,showCnf}=this.state;
         return (
             <React.Fragment>
                 <div className="container">
@@ -83,7 +82,7 @@ class Register extends Component {
                     </form>
                 </div>
 
-                {showCab && <Link to="/emailConfirm" />}
+                {showCnf && <EmailConfirm email={login}/>}
 
             </React.Fragment>
         );

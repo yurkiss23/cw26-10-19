@@ -88,7 +88,11 @@ namespace DefaultBeaver.Controllers
                 token = CreateTokenJwt(user)
             });
         }
+        
+        private void Sendmail(string mail)
+        {
 
+        }
 
         private string CreateTokenJwt(DbUser user)
         {
