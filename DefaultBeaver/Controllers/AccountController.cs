@@ -6,6 +6,7 @@ using System.Security.Claims;
 using System.Text;
 using System.Threading.Tasks;
 using DefaultBeaver.Entities;
+using DefaultBeaver.Helpers;
 using DefaultBeaver.ViewModels;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
@@ -81,6 +82,9 @@ namespace DefaultBeaver.Controllers
                 return BadRequest(result.Errors);
             }
             await _signInManager.SignInAsync(user, isPersistent: false);
+
+            EmailSend emailSend = new EmailSend();
+            await emailSend.SendEmailAsync(model.Email, "Confirm your account", "Confirm your account");
 
             return Ok(
             new

@@ -5,7 +5,7 @@ class UserCabinet extends Component {
     render() { 
         return (
             <div className="container">
-                <h3 className="h3 mb-3 font-weight-normal text-center">User</h3>
+    <h3 className="h3 mt-4 mb-3 font-weight-normal text-center">User Cabinet: {this.props.name}</h3>
             </div>
         );
     }

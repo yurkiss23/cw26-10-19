@@ -17,7 +17,7 @@ class Confirm extends Component {
             <React.Fragment>
                 <div className="container">
                     <form onSubmit={this.onSubmitConfirm} className="form-confirm">
-                        <h3 className="h3 mt-4 mb-3 font-weight-normal text-center">{this.props.email}, Вас зареєстровано! Натисніть, що підтвердити email</h3>
+                        <h3 className="h3 mt-4 mb-3 font-weight-normal text-center">{this.props.email}, Вас зареєстровано! Натисніть, щоб підтвердити email</h3>
                         <button className="btn btn-lg btn-primary btn-block" type="submit">Confirm</button>
                     </form>
                 </div>

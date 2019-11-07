@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 //import { Route } from 'react-router';
-import {Link} from 'react-router-dom';
+//import {Link} from 'react-router-dom';
 import classnames from 'classnames';
 import axios from 'axios';
 //import { connect } from 'react-redux';
@@ -24,7 +24,7 @@ class Register extends Component {
         console.log('---submitReg---');
         const {login, password,passConfirm}=this.state;
         const model={"email":login,"password":password,"passwordConfirm":passConfirm};
-        axios.post("http://localhost:60774/api/account/register",model).then(
+        axios.post("http://localhost:56269/api/account/register",model).then(
             (rest)=>{
                 console.log("--register--");
                 this.setState({showCnf:true});

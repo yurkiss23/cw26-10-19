@@ -7,6 +7,7 @@ import Register from './components/Register';
 import Counter from './components/Counter';
 import FetchData from './components/FetchData';
 import EmailConfirm from './components/EmailConfirm';
+import UserCabinet from './components/Cabinet';
 
 export default () => (
   <Layout>
@@ -16,5 +17,6 @@ export default () => (
     <Route path='/login' component={Login} />
     <Route path='/register' component={Register} />
     <Route path='/email-comfirm' component={EmailConfirm} />
+    <Route path='/user-cabinet' component={UserCabinet} />
   </Layout>
 );
